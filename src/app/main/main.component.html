@@ -1,0 +1,70 @@
+<div class="container">
+
+<div>
+  <p>Mars Rover Photos Api is designed to collect image data gathered by NASA's Curiosity, Opportunity, and Spirit rovers on Mars</p>
+<p>In this case, the photos can be filtered by the <em>Sol</em> number, the <em>camera</em> and the <em>rover</em> itself. 
+</div>
+
+<div class="sols">
+<p>Curiosity &lt;Max Sol 1804 &gt;</p>
+<p>Spirit &lt;Max Sol 2208 &gt;</p>
+<p>Opportunity &lt;Max Sol 4650 &gt;</p>
+</div>
+
+
+
+    <div class="fakeForm">
+      
+      <div class="formBlock"> 
+    
+        <label for="rover">Rover: </label>
+        <select name="rover" id="rover">
+          <option>Curiosity</option>
+          <option>Spirit</option>
+          <option>Opportunity</option>
+        </select>
+      </div>  
+      <div class="formBlock">
+      <label for="camera">Cameras: </label>
+        <select name="camera" id="camera">
+          <option>FHAZ</option>
+          <option>RHAZ</option>
+          <option>MAST</option>
+          <option>CHEMCAM</option>
+          <option>MAHLI</option>
+          <option>MARDI</option>
+          <option>NAVCAM</option>
+          <option>PANCAM</option>
+          <option>MINITES</option>
+        </select>
+      </div>
+      <div class="formBlock">  
+      <label for="sol">Sol: </label>
+        <input type="number" name="sol" min="0" max="9999" id="sol"value=0/>
+      </div>
+
+      <div class="formBlock">
+        <button (click)="getNasaObjects()" id="search">Search</button>
+      </div>
+      </div>
+  <div class="imgsContainer">
+      <div class="message">
+        <p></p>
+      </div>
+
+    <div class="thumbs" *ngFor="let photo of photos; let i=index" >
+          <!-- expects and expression, so in order to render the file
+            give it the property specified as an object (using the interface name), not using the dot notation
+            or interpolation -->
+          <img (click)="open(i)" [defaultImage]="defaultImage" [lazyLoad]="photo['img_src']" [offset]="offset">  
+          <div class="content">
+              <p class="title">{{photo.rover.name}}</p> 
+              <p class="status">Status: {{photo.rover.status}}</p>
+            
+              <p>{{photo.camera.full_name}} ({{photo.camera.name}})</p>   
+              <p>Max Sol: {{photo.rover.max_sol}}</p>
+          </div>  
+
+    </div> 
+ </div>
+</div>

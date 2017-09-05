@@ -1,1 +1,197 @@
-/* You can add global styles to this file, and also import other style files */
+@import "../node_modules/angular2-lightbox/lightbox.css";
+
+html {
+    background: #111;
+}
+body {
+    margin: 0 auto;
+    width: 90%;
+    padding: 0px;
+    background: #222;
+    text-align: justify;
+    color: #ddd;
+    font-family: "Quicksand", Verdana, Geneva, Tahoma, sans-serif;
+    
+}
+
+body * {
+    transition: all 0.200s ease-in-out;
+}
+
+header{
+    padding: 10px;
+    background: #222;
+}
+header h1 {
+    padding: 0;
+    margin: 0;
+    font-size: 18px;
+    
+}
+
+.banner{
+    background: url("https://static.pexels.com/photos/37648/prairie-highway-the-scenery-mountain-37648.jpeg")no-repeat center center;
+    background-size: 100%;
+    height: 90vh;
+}
+
+.container {
+    padding: 10px;
+}
+.imgsContainer{
+    width: 100%;
+text-align: center;
+}
+.sols {
+    padding: 10px;
+    text-align: center;
+}
+.sols p {
+    display: inline-table;
+    padding: 10px;
+    margin: 5px;
+    border-radius:4px;
+    border: 1px solid #eee;
+}
+
+.fakeForm{
+  padding: 10px 10px 20px 10px;
+  text-align: center;
+}
+
+
+.formBlock{
+    display: inline-table;
+  
+}
+
+.formBlock label {
+    font-size: 14px;
+    font-weight: bold;
+    color: #eee;
+  
+
+}
+.formBlock select, .formBlock input[type="number"], .formBlock button{
+    font-size: 20px;
+    padding: 10px;
+    cursor: pointer;
+    color: #FF3E17;
+    border:none;
+    background: none;
+    border-bottom:1px solid #111;
+}
+
+
+.formBlock button {
+    border:none;
+    color: #000;
+    background: #333;
+}
+
+.formBlock button:hover {
+    background: #CC3112;
+    color: #eee;
+    cursor: pointer;
+}
+
+.thumbs {
+    margin: 10px;
+    padding: 0;
+    width: 30%;
+    vertical-align: top;
+  display: inline-table;
+  border-radius:5px 5px 0 0;
+  border-bottom:5px solid #222;
+}
+
+.thumbs:hover {
+   box-shadow:0px 1px 14px #111; 
+   border-bottom-color: #CC3112;
+}
+
+
+.thumbs img {
+    width: 100%;
+    height: auto;
+    border-radius:5px 5px 0 0;
+    cursor:pointer;
+     
+    }
+
+.title{
+    font-family:"Anton", Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 30px;
+    padding: 0;
+    margin: 0;
+}
+     
+    
+.status {
+   border-bottom: 1px solid #CC3112;
+    padding: 0 0 10px 0;
+    margin: 0;
+}
+
+
+.lightbox {
+    height: 100vh;
+    position: fixed;
+    top: 100px;
+}
+
+footer{
+    padding: 10px;
+    text-align: right;
+}
+footer p {
+    color: #111;
+}
+
+
+@media (min-width:491px)  and (max-width: 960px){
+    .banner {
+        height: 20vh;
+    }
+
+    .formBlock{
+        text-align: left;
+        display: block;
+        width: 90%;
+     margin: 0 auto;
+    }
+    .formBlock *{
+        display: block;
+        width: 100%;
+        margin-top:10px; 
+    }
+    
+    .thumbs{
+        width: 40%;
+        
+    }
+   
+}    
+
+@media (min-width:0) and (max-width:490px){
+    body {
+        width: 100%;
+    }
+    .formBlock{
+        display: block;
+        margin-top:10px;
+    }
+    
+    .formBlock *{
+        display: block;
+        width: 100%;
+        margin-top:0px; 
+    }
+
+    .banner {
+        height: 20vh;
+    }
+    .thumbs{
+        width: 90%;
+    }
+}
